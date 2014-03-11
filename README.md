@@ -6,3 +6,4 @@ Apicatus
 [![Code Climate](https://codeclimate.com/github/maggiben/apicatus.png)](https://codeclimate.com/github/maggiben/apicatus)
 
 Apicatus repo
+[![Logo](https://raw.github.com/apicatus/landing/master/images/logo.png)](http://apicat.us)
