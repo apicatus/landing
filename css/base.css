@@ -139,6 +139,14 @@ textarea {
   margin: 1em 0;
 }
 
+#header-how {
+    /*background-image: url(//d3e54v103j8qbb.cloudfront.net/gen/img/marketing/main-bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+    background-color: #2b2f3e;
+    color: #FFF;
+}
 
 /* =========================
             Nav
@@ -1044,4 +1052,45 @@ footer hr.divide {
 #logform .login-text {
     text-align: center;
     font-size: 0.75em;
+}
+
+/* PASSWORD RECOVERY */
+.login-heading {
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 150%;
+    font-weight: 100;
+    letter-spacing: normal;
+}
+
+/******************************************************************************/
+/*                                  HOW.HTML                                  */
+/******************************************************************************/
+#header-how h1.larger-top {
+    color: #2fe7be;
+    font-size: 14px;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-top: 10px;
+}
+#header-how h2 {
+    margin-top: 16px;
+    font-weight: 400;
+}
+#header-how p {
+    font-weight: 100;
+}
+
+.squarish-box {
+    /*border-image: url(../images/squarish.svg);*/
+    background-image: url(../images/squarish.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 128px;
+    height: 128px;
+    -webkit-filter: hue-rotate(140deg);
+    position: relative;
+    display: table;
 }
