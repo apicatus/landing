@@ -1,6 +1,6 @@
-/* =========================
-        Apicat.us
-========================== */
+/*****************************************************************************/
+/*                             Apicat.us                                     */
+/*****************************************************************************/
 
 body {
   font: 16px 'Raleway', sans-serif;
@@ -105,9 +105,9 @@ textarea {
   border-bottom: 13px solid #00afd7;
 }
 
-/* =========================
-            Header
-========================== */
+/*****************************************************************************/
+/*                               Header                                      */
+/*****************************************************************************/
 
 #header {
   background-image: url(../images/header-bg.jpg);
@@ -139,18 +139,10 @@ textarea {
   margin: 1em 0;
 }
 
-#header-how {
-    /*background-image: url(//d3e54v103j8qbb.cloudfront.net/gen/img/marketing/main-bg.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;*/
-    background-color: #2b2f3e;
-    color: #FFF;
-}
 
-/* =========================
-            Nav
-========================== */
+/*****************************************************************************/
+/*                                  NAV                                      */
+/*****************************************************************************/
 
 nav {
   position: fixed;
@@ -182,6 +174,20 @@ nav label {
   -webkit-user-select: none;
 }
 
+nav label i.menu {
+    color: #00afd7;
+    float: right;
+    padding: 0px 18px;
+    font-size: 34px;
+    line-height: 53px;
+    -webkit-transition: all 0.15s ease-out 0;
+    -moz-transition: all 0.15s ease-out 0;
+    transition: all 0.15s ease-out 0;
+}
+nav label i.menu:hover {
+    color: #fff;
+}
+  
 nav input[type=checkbox] {
   position: absolute;
   top: -9999px;
@@ -534,10 +540,9 @@ img.expand, img.expand-name {
   background-color: #FAFAFA;
 }
 
-/* =========================
-          About
-========================== */
-
+/*****************************************************************************/
+/*                                 ABOUT                                     */
+/*****************************************************************************/
 #about p {
   font-size: 1em;
 }
@@ -563,40 +568,9 @@ img.expand, img.expand-name {
   margin-bottom: 10px;
 }
 
-/* =========================
-          Footer
-========================== */
-
-/*
-footer {
-  background: #46596a;
-  color: white;
-  font-size: .8em;
-}
-
-footer .block {
-  padding: 1em 2em;
-}
-
-footer a {
-  color: #7797B3;
-}
-
-footer a:hover {
-  color: #FFF;
-  text-decoration: underline;
-}
-
-footer p {
-  color: #627c94;
-  text-align: center;
-}
-*/
-
-/* =========================
-        Media Queries
-========================== */
-
+/*****************************************************************************/
+/*                           Media Queries                                   */
+/*****************************************************************************/
 @media only screen and (max-width: 875px) {
 
   .block {
@@ -621,6 +595,12 @@ footer p {
     line-height: 1.5em;
     padding: 0;
     margin: 0;
+    /*-webkit-transition: all 0.15s ease-out 0;
+       -moz-transition: all 0.15s ease-out 0;
+           transition: all 0.15s ease-out 0;
+    -webkit-transform: scale(0,0);
+       -moz-transform: scale(0,0);
+            transform: scale(0,0);*/
   }
 
   nav ul li {
@@ -646,19 +626,11 @@ footer p {
     min-height: 3.5em;
   }
     
-  nav label i.menu {
-    color: #00afd7;
-    float: right;
-    padding: 0px 18px;
-    font-size: 34px;
-    line-height: 53px;
-  }
-
   nav label:after {
-    /*background-image: url("../images/logo.png");*/
+    background-image: url("../images/logo.png");
     content: '';
     position: absolute;
-    right: .5em;
+    left: .5em;
     top: .5em;
     font-size: 1.5em;
     width: 32px;
@@ -670,6 +642,9 @@ footer p {
   }
   nav input[type=checkbox]:checked ~ ul {
     display:block;
+    /*-webkit-transform: scale(1,1);
+       -moz-transform: scale(1,1);
+            transform: scale(1,1);*/
   }
 
   nav .active a, nav a:hover {
@@ -835,7 +810,9 @@ footer p {
     width: 50%;
   }
 }
-/* FOOTER */
+/*****************************************************************************/
+/*                                FOOTER                                     */
+/*****************************************************************************/
 footer {
   padding: 20px;
   background-color: #29343E;
@@ -917,7 +894,9 @@ footer hr.divide {
     }
 }
 
-/* VIDEO */
+/*****************************************************************************/
+/*                                 VIDEO                                     */
+/*****************************************************************************/
 .video-reel {
     position: relative;
     padding-bottom: 56.25%;
@@ -934,7 +913,9 @@ footer hr.divide {
     height: 100%;
 }
 
-/* LOGIN */ 
+/*****************************************************************************/
+/*                                   LOGIN                                   */
+/*****************************************************************************/
 #logform .login-box {
     margin: 0 auto;
 }
@@ -1052,45 +1033,4 @@ footer hr.divide {
 #logform .login-text {
     text-align: center;
     font-size: 0.75em;
-}
-
-/* PASSWORD RECOVERY */
-.login-heading {
-    text-align: center;
-    padding-bottom: 1em;
-    font-size: 150%;
-    font-weight: 100;
-    letter-spacing: normal;
-}
-
-/******************************************************************************/
-/*                                  HOW.HTML                                  */
-/******************************************************************************/
-#header-how h1.larger-top {
-    color: #2fe7be;
-    font-size: 14px;
-    font-weight: 100;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    padding-top: 10px;
-}
-#header-how h2 {
-    margin-top: 16px;
-    font-weight: 400;
-}
-#header-how p {
-    font-weight: 100;
-}
-
-.squarish-box {
-    /*border-image: url(../images/squarish.svg);*/
-    background-image: url(../images/squarish.svg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 128px;
-    height: 128px;
-    -webkit-filter: hue-rotate(140deg);
-    position: relative;
-    display: table;
 }
