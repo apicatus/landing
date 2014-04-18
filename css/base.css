@@ -20,9 +20,10 @@ ul {
 }
 
 p {
-  font-size: 1.2em;
-  line-height: 1.5em;
-  text-align: left;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    text-align: left;
+    margin-top: 9px;
 }
 
 h1 {
@@ -104,7 +105,46 @@ textarea {
 #header, #tagline, #streamline {
   border-bottom: 13px solid #00afd7;
 }
-
+/*****************************************************************************/
+/*                                Logo                                       */
+/*****************************************************************************/
+.icon32 {
+    max-width: 32px;
+    max-height: 32px;
+}
+.paragraph-logo {
+    max-width: 90px;
+    margin-right: 20px;
+}
+/*****************************************************************************/
+/*                             Squarish box                                  */
+/*****************************************************************************/
+.squarish-box {
+    position: relative;
+    float: left;
+    margin: 0 auto;
+    width: 128px;
+    height: 128px;
+    background-image: url('../images/squarish2.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: table;
+}
+.squarish-box p:first-child {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    text-align: center;
+    font-size: 70px !important;
+    color: #FFD03B;
+}
+/*****************************************************************************/
+/*                               Buttons                                     */
+/*****************************************************************************/
+.button {
+  width: 18em;
+  margin-top: 1em;
+}
 /*****************************************************************************/
 /*                               Header                                      */
 /*****************************************************************************/
@@ -114,9 +154,9 @@ textarea {
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
   color: #FFF;
 }
 
@@ -187,7 +227,7 @@ nav label i.menu {
 nav label i.menu:hover {
     color: #fff;
 }
-  
+
 nav input[type=checkbox] {
   position: absolute;
   top: -9999px;
@@ -199,9 +239,9 @@ nav.f-nav {
 }
 
 
-/* =========================
-          Tagline
-========================== */
+/*****************************************************************************/
+/*                               Tagline                                     */
+/*****************************************************************************/
 
 #tagline {
   background-image: url(../images/wall-plug.jpg);
@@ -233,154 +273,14 @@ nav.f-nav {
 
 #features .button {
   color: #a086d3;
-  width: 18em;
-  margin-top: 1em;
 }
 
 #call .button:hover {
   color: #4b4b4b;
 }
 
-/* =========================
-          Speakers
-========================== */
-
-#speakers h2.title {
-  margin-bottom: 2em;
-}
-
-.keynote_entity {
-  margin-bottom: 4em;
-}
-
-.speaker_entity {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  display: inline-block;
-  width: 50%;
-  margin: 0 -3px 2em 0;
-  padding: .5em;
-  vertical-align: top;
-  position: relative;
-}
-
-.speaker_entity .speaker-img {
-  display: block;
-  margin: auto;
-}
-
-.speaker_entity h2 {
-  color: #ff4b5c;
-  cursor: pointer;
-}
-
-.speaker_entity p {
-  font-size: 1em;
-  line-height: 1.3em;
-  clear: both;
-}
-
-.speaker_entity h2, .keynote_entity h2 {
-  margin: 1em 0 0;
-  letter-spacing: 0;
-}
-
-.speaker_entity h2 a:hover {
-  color: #4b4b4b;
-}
-
-.speaker_entity h2:before, .speaker_entity h2:after {
-  height: 0px;
-}
-
-.speaker_entity h3 {
-  cursor: pointer;
-  font-weight: 400;
-  margin-top: .5em;
-}
-
-.speaker_entity button {
-  border: 2px solid #ff4b5c;
-  color: #ff4b5c;
-  background: none;
-  font-size: 1em;
-  cursor: pointer;
-  outline: none;
-  width: 36%;
-}
-
-.speaker_entity button:hover {
-  border: 2px solid #4b4b4b;
-  color: #4b4b4b;
-}
-
-.speaker_entity.expanded_talk button.expand_talk, .speaker_entity.expanded_bio button.expand_bio {
-  border: 2px solid #4b4b4b;
-  color: #4b4b4b;
-}
-
-.speaker_entity .talk_abstract, .speaker_entity .speaker_bio {
-  display: none;
-}
-
-.speaker_entity.expanded_talk .talk_abstract,
-.speaker_entity.expanded_bio .speaker_bio {
-  display: block;
-}
-
-.talk_preview, .speaker_bio {
-  margin-bottom: 1em;
-}
-
-.speaker_entity .tag_container {
-  text-align: center;
-  font-size: 0.7em;
-  font-weight: normal;
-  margin-bottom: 1em;
-}
-
-.speaker_entity .tags .tag {
-  cursor: pointer;
-  background: #EEE;
-  padding: .15em .3em;
-}
-
-.speaker_entity .tags .tag:hover {
-  background: #DDD;
-}
-
-.speaker_entity.selected img.speaker-img {
-  box-shadow: 2px 2px 0px #ff4b5c, -2px -2px 0px #ff4b5c, 2px -2px 0px #ff4b5c, -2px 2px 0px #ff4b5c;
-}
-
-.close {
-  background: #ff4b5c;
-  padding: .1em .4em;
-  color: white;
-  float: right;
-  margin-bottom: .5em;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.close:hover {
-  background: #A8A8A8;
-  color: white;
-}
-
 img.expand, img.expand-name {
   margin-bottom: .15em;
-}
-
-.expanded_talk img.expand, .expanded_bio img.expand-name  {
-  transform:rotate(180deg);
-  -ms-transform:rotate(180deg); /* IE 9 */
-  -webkit-transform:rotate(180deg); /* Safari and Chrome */
 }
 
 /* =========================
@@ -392,21 +292,21 @@ img.expand, img.expand-name {
 }
 
 
-/* =========================
-          Locaion
-========================== */
+/*****************************************************************************/
+/*                               Streamline                                  */
+/*****************************************************************************/
 
 #streamline {
   height: 20em;
   overflow: hidden;
+  color: #FFF;
   background-image: url(../images/location-bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: #FFF;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
 }
 
 #streamline h1 {
@@ -424,11 +324,12 @@ img.expand, img.expand-name {
 ========================== */
 
 #register .register-form {
+  overflow: auto;
   background-image: url(../img/register-bg.jpg);
   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  overflow: auto;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
 }
 
 #register .register-info {
@@ -463,85 +364,16 @@ img.expand, img.expand-name {
   margin: 2em;
 }
 
-.tito-ticket {
-  border: 2px solid;
-  padding: 1em;
-}
+/*****************************************************************************/
+/*                               Sponsor                                     */
+/*****************************************************************************/
 
-.tito-ticket:first-of-type {
-  margin-bottom: 1em;
-}
-
-.tito-ticket-price-quantity {
-  overflow: auto;
-  padding: 3px 0;
-}
-
-.tito-ticket-price {
-  float: left;
-  font-weight: 700;
-}
-
-.tito-ticket-quantity  {
-  float: right;
-}
-
-.tito-ticket-quantity input {
-  width: 22px;
-  border: 1px solid gray;
-  padding: .5em;
-  text-align: right;
-  border-radius: 3px;
-}
-
-.tito-ticket-status-sold-out {
-  font-weight: 700;
-  text-align: left;
-}
-
-.tito-ticket-name {
-  text-align: left;
-  margin-bottom: 1em;
-  display: block;
-}
-
-.tito-ticket-name:after {
-  content: "Individual Ticket";
-}
-
-#tito-footer {
-  display: none;
-}
-
-.tito-submit {
-  color: #ff4b5c;
-  border: 2px solid;
-  padding: .8em 0;
-  font-size: 1.4em;
-  background: none;
-  width: 100%;
-  cursor: pointer;
-}
-
-.tito-submit:hover {
-  color: #4b4b4b;
-  border-color: #4b4b4b;
-}
-
-#tito-register-form img {
-  display: none;
-}
-
-/* =========================
-          Sponsor
-========================== */
-
-#sponsor {
+#howto {
   background-color: #FAFAFA;
 }
 
 /*****************************************************************************/
-/*                                 ABOUT                                     */
+/*                                 About                                     */
 /*****************************************************************************/
 #about p {
   font-size: 1em;
@@ -625,7 +457,7 @@ img.expand, img.expand-name {
     display: block;
     min-height: 3.5em;
   }
-    
+
   nav label:after {
     background-image: url("../images/logo.png");
     content: '';
@@ -713,7 +545,6 @@ img.expand, img.expand-name {
   }
 
 }
-
 @media only screen and (max-width: 700px) {
 
   .speaker_entity {
@@ -810,6 +641,7 @@ img.expand, img.expand-name {
     width: 50%;
   }
 }
+
 /*****************************************************************************/
 /*                                FOOTER                                     */
 /*****************************************************************************/
@@ -830,9 +662,6 @@ footer {
     position: absolute;
     left: 10px;
 }
-.footer-menu .logo img {
-    max-height: 32px;
-}
 .footer-menu li {
     line-height: 32px;
     text-transform: uppercase;
@@ -844,8 +673,8 @@ footer {
 .footer-menu li a {
     color: #49c5b1;
     -webkit-transition: all 0.15s ease-out 0;
-    -moz-transition: all 0.15s ease-out 0;
-    transition: all 0.15s ease-out 0;
+       -moz-transition: all 0.15s ease-out 0;
+            transition: all 0.15s ease-out 0;
 }
 .footer-menu li a:hover {
     color: #fff;
@@ -863,9 +692,8 @@ footer {
 .social-menu li a {
     color: #49c5b1;
     -webkit-transition: all 0.15s ease-out 0;
-    -moz-transition: all 0.15s ease-out 0;
-    transition: all 0.15s ease-out 0;
-  
+       -moz-transition: all 0.15s ease-out 0;
+            transition: all 0.15s ease-out 0;
 }
 .social-menu li a:hover {
     color: #fff;
@@ -902,7 +730,7 @@ footer hr.divide {
     padding-bottom: 56.25%;
     padding-top: 30px; height: 0; overflow: hidden;
 }
- 
+
 .video-reel iframe,
 .video-reel object,
 .video-reel embed {
@@ -1034,3 +862,5 @@ footer hr.divide {
     text-align: center;
     font-size: 0.75em;
 }
+
+/* */

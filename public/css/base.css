@@ -1,0 +1,872 @@
+/*****************************************************************************/
+/*                             Apicat.us                                     */
+/*****************************************************************************/
+
+* {
+    -webkit-box-sizing: border-box;
+       -mox-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+  font: 16px 'Raleway', sans-serif;
+  color: #4b4b4b;
+  background: #FFF;
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    text-align: left;
+    margin-top: 9px;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 500;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin: 0 0 1.25em;
+  position: relative;
+  display: inline-block;
+}
+
+h2:before, h2:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background: #4b4b4b;
+  width: 30px;
+  top: .6em;
+}
+
+h2:before {
+  left: -38px;
+}
+
+h2:after {
+  right: -38px;
+}
+
+a {
+  color: #49c5b1;
+  text-decoration: none;
+}
+
+a:hover, .active a {
+  color: #35a694;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+nav a, #header a.button {
+  color: white;
+}
+
+nav a:hover,  #header a.button:hover {
+  color: #49c5b1;
+}
+
+textarea {
+  resize: vertical;
+}
+
+::selection {
+  background: #00afd7;
+  color: #fff;
+}
+
+.block {
+  max-width: 980px;
+  margin: auto;
+  text-align: center;
+  padding: 6em 2em;
+}
+
+.button {
+  border: 2px solid;
+  padding: .8em 0;
+  font-size: 1.4em;
+  display: inline-block;
+}
+
+#header, #tagline, #streamline {
+  border-bottom: 13px solid #00afd7;
+}
+/*****************************************************************************/
+/*                                Logo                                       */
+/*****************************************************************************/
+.icon32 {
+    max-width: 32px;
+    max-height: 32px;
+}
+.paragraph-logo {
+    max-width: 90px;
+    margin-right: 20px;
+}
+/*****************************************************************************/
+/*                             Squarish box                                  */
+/*****************************************************************************/
+.squarish-box {
+    position: relative;
+    float: left;
+    margin: 0 auto;
+    width: 128px;
+    height: 128px;
+    background-image: url('../images/squarish2.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: table;
+}
+.squarish-box p:first-child {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    text-align: center;
+    font-size: 70px !important;
+    color: #FFD03B;
+}
+/*****************************************************************************/
+/*                               Buttons                                     */
+/*****************************************************************************/
+.button {
+  width: 18em;
+  margin-top: 1em;
+}
+/*****************************************************************************/
+/*                               Header                                      */
+/*****************************************************************************/
+
+#header {
+  background-image: url(../images/header-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+  color: #FFF;
+}
+
+#header .block {
+  padding-top: 8em;
+}
+
+#header .actions .button {
+  width: 33%;
+}
+
+#header .actions a:first-of-type {
+  margin-right: 1em;
+}
+
+#header h1 {
+  font-weight: 100;
+  font-size: 2em;
+  letter-spacing: 0;
+  margin: 1em 0;
+}
+
+
+/*****************************************************************************/
+/*                                  NAV                                      */
+/*****************************************************************************/
+
+nav {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(41, 52, 62, 0.5);
+  z-index: 1;
+}
+
+nav .block {
+  padding: 0;
+}
+
+nav ul {
+    display: inline-block;
+    width: 100%;
+}
+
+nav ul li {
+    float: left;
+    width: 16.666666%;
+    line-height: 36px;
+}
+
+/* Dropdown menu */
+
+nav label {
+  display: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+}
+
+nav label i.menu {
+    color: #00afd7;
+    float: right;
+    padding: 0px 18px;
+    font-size: 34px;
+    line-height: 53px;
+    -webkit-transition: all 0.15s ease-out 0;
+    -moz-transition: all 0.15s ease-out 0;
+    transition: all 0.15s ease-out 0;
+}
+nav label i.menu:hover {
+    color: #fff;
+}
+
+nav input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+nav.f-nav {
+  background-color: rgba(41, 52, 62, 1);
+}
+
+
+/*****************************************************************************/
+/*                               Tagline                                     */
+/*****************************************************************************/
+
+#tagline {
+  background-image: url(../images/wall-plug.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #FFF;
+}
+
+#tagline h1 {
+  margin: 0;
+  font-weight: 600;
+  -webkit-text-stroke: 1px #000;
+     -moz-text-stroke: 1px #000;
+          text-stroke: 1px #000;
+}
+
+
+/* =========================
+          Call
+========================== */
+
+#call {
+  background: #FAFAFA;
+}
+
+#features .button {
+  color: #a086d3;
+}
+
+#call .button:hover {
+  color: #4b4b4b;
+}
+
+img.expand, img.expand-name {
+  margin-bottom: .15em;
+}
+
+/* =========================
+          Locaion
+========================== */
+
+#last-year .button {
+  width: 18em;
+}
+
+
+/*****************************************************************************/
+/*                               Streamline                                  */
+/*****************************************************************************/
+
+#streamline {
+  height: 20em;
+  overflow: hidden;
+  color: #FFF;
+  background-image: url(../images/location-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
+#streamline h1 {
+  margin: 0;
+  font-weight: 100
+}
+
+#streamline .block {
+  padding: 9em 2em;
+}
+
+
+/* =========================
+          Register
+========================== */
+
+#register .register-form {
+  overflow: auto;
+  background-image: url(../img/register-bg.jpg);
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+       -o-background-size: cover;
+          background-size: cover;
+}
+
+#register .register-info {
+  width: 50%;
+  float: left;
+  color: white;
+  margin-top: 1.3em;
+}
+
+#register .register-info h2 {
+  margin: 1em;
+}
+
+.register-info h2:before, .register-info h2:after {
+  width: 0;
+}
+
+#register .register-info img {
+  margin: 0 2em;
+}
+
+#register .form {
+  width: 39%;
+  float: right;
+  background: white;
+  border: 2px solid;
+  border-left: none;
+  padding: 0 1em 1em 1em;
+}
+
+.new_registration {
+  margin: 2em;
+}
+
+/*****************************************************************************/
+/*                               Sponsor                                     */
+/*****************************************************************************/
+
+#howto {
+  background-color: #FAFAFA;
+}
+
+/*****************************************************************************/
+/*                                 About                                     */
+/*****************************************************************************/
+#about p {
+  font-size: 1em;
+}
+#about img.bob {
+  margin-right: 20px;
+  width: 90px
+}
+
+#about .committee_members {
+  width: 100%;
+  display: inline-block;
+}
+
+#about .committee_members div {
+  display: inline-block;
+  float: left;
+  width: 16.6%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#about .committee_members div img {
+  margin-bottom: 10px;
+}
+
+/*****************************************************************************/
+/*                           Media Queries                                   */
+/*****************************************************************************/
+@media only screen and (max-width: 875px) {
+
+  .block {
+    padding: 4em 2em;
+  }
+
+  #header .block {
+    padding-top: 6em;
+  }
+
+  nav {
+    background: rgba(41, 52, 62, 1);
+  }
+
+  nav.f-nav {
+    background: rgba(41, 52, 62, 1);
+  }
+
+  nav ul {
+    display: none;
+    width: 100%;
+    line-height: 1.5em;
+    padding: 0;
+    margin: 0;
+    /*-webkit-transition: all 0.15s ease-out 0;
+       -moz-transition: all 0.15s ease-out 0;
+           transition: all 0.15s ease-out 0;
+    -webkit-transform: scale(0,0);
+       -moz-transform: scale(0,0);
+            transform: scale(0,0);*/
+  }
+
+  nav ul li {
+    float: none;
+    text-align: left;
+    border-bottom: 1px solid rgba(27, 34, 41, 1);
+    width: 100%;
+  }
+
+  nav ul li.twitter-button {
+    padding: 1em 1.5em 0.6em;
+  }
+
+  nav a {
+    display: block;
+    padding: 16px 1.5em;
+    width: 100%;
+    color: #ccc;
+  }
+
+  nav label {
+    display: block;
+    min-height: 3.5em;
+  }
+
+  nav label:after {
+    background-image: url("../images/logo.png");
+    content: '';
+    position: absolute;
+    left: .5em;
+    top: .5em;
+    font-size: 1.5em;
+    width: 32px;
+    height: 32px;
+    background-size:32px 32px;
+  }
+  nav .menu-logo {
+      display: none;
+  }
+  nav input[type=checkbox]:checked ~ ul {
+    display:block;
+    /*-webkit-transform: scale(1,1);
+       -moz-transform: scale(1,1);
+            transform: scale(1,1);*/
+  }
+
+  nav .active a, nav a:hover {
+    color: #fff;
+  }
+
+  #streamline .block {
+    padding: 8em 2em;
+  }
+
+  .speaker_entity button {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (min-width: 761px) {
+    .login-box {
+        max-width: 280px
+    }
+}
+
+@media only screen and (max-width: 760px) {
+
+  #header .actions .button {
+    width: 47%;
+  }
+
+  #header .actions a:first-of-type {
+    margin-right: 0;
+  }
+
+  #register .register-info, #register .form {
+    width: 100%;
+    float: none;
+  }
+
+  #register .register-form {
+    height: auto;
+    border: 2px solid;
+  }
+
+  #register .register-info {
+    margin: 1.3em 0;
+  }
+
+  #register .form {
+    height: auto;
+    border: none;
+    padding: 0;
+  }
+
+  #register .form form {
+    width: 90%;
+    margin: auto;
+    padding: 1em;
+  }
+
+  #register .register-form {
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    -o-background-size: auto;
+  }
+
+  #about .committee_members div {
+    width: 25%;
+  }
+
+}
+@media only screen and (max-width: 700px) {
+
+  .speaker_entity {
+    width: 100%;
+  }
+  .speaker_entity button {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+
+  .block {
+    padding: 2em 1em;
+  }
+
+  #header .actions .button {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  h1 {
+    letter-spacing: 0;
+  }
+
+  .title h1 {
+    margin-bottom: 1em;
+  }
+
+  .title h2 {
+    display: none;
+  }
+
+  #streamline .block {
+    padding: 2em 1em;
+  }
+
+   #about .committee_members div {
+    width: 33.3%;
+  }
+
+}
+
+@media only screen and (max-width: 510px) and (min-width: 480px){
+
+  .speaker_entity button {
+    font-size: 0.8em;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  #header h1 {
+    font-size: 1.5em;
+  }
+
+  #header .actions .button {
+    font-size: 1.2em;
+  }
+
+  #call .button, #last-year .button {
+    width: 100%;
+  }
+
+  .new_registration {
+    margin: 1em;
+  }
+
+  #register .register-info img {
+    display: none;
+  }
+
+  #register .register-info h2 {
+    margin-top: 0;
+  }
+
+  #register .form {
+    padding: .1em 0 .1em;
+  }
+
+  .speaker_entity {
+    width: 100%;
+  }
+  #about .committee_members div {
+    width: 50%;
+  }
+}
+
+/*****************************************************************************/
+/*                                FOOTER                                     */
+/*****************************************************************************/
+footer {
+  padding: 20px;
+  background-color: #29343E;
+  color: #959cad;
+    text-align: right;
+    font-size: 12px;
+}
+
+.footer-menu {
+    display: inline-block;
+    margin: 0px;
+}
+.footer-menu .logo {
+    float: left;
+    position: absolute;
+    left: 10px;
+}
+.footer-menu li {
+    line-height: 32px;
+    text-transform: uppercase;
+    font-weight: 100;
+    padding: 0 15px;
+    list-style: none;
+    float: right;
+}
+.footer-menu li a {
+    color: #49c5b1;
+    -webkit-transition: all 0.15s ease-out 0;
+       -moz-transition: all 0.15s ease-out 0;
+            transition: all 0.15s ease-out 0;
+}
+.footer-menu li a:hover {
+    color: #fff;
+}
+.social-menu {
+    margin: 0px;
+    padding: 10px;
+    font-size: 1.5em;
+}
+.social-menu li {
+    padding: 0 15px;
+    display: inline-block;
+    float: right;
+}
+.social-menu li a {
+    color: #49c5b1;
+    -webkit-transition: all 0.15s ease-out 0;
+       -moz-transition: all 0.15s ease-out 0;
+            transition: all 0.15s ease-out 0;
+}
+.social-menu li a:hover {
+    color: #fff;
+}
+footer hr.divide {
+    padding: 0px;
+    height: 0px;
+    border: none;
+    border-bottom: 1px solid #464C52;
+}
+
+@media (max-width: 600px), (max-width: 600px) {
+    footer hr {
+        display: none;
+    }
+    .footer-menu li {
+        display: none
+    }
+    .social-menu {
+        float: none;
+        text-align: center;
+    }
+    .social-menu li {
+        float: none;
+        font-size: 2.5em;
+    }
+}
+
+/*****************************************************************************/
+/*                                 VIDEO                                     */
+/*****************************************************************************/
+.video-reel {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.video-reel iframe,
+.video-reel object,
+.video-reel embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*****************************************************************************/
+/*                                   LOGIN                                   */
+/*****************************************************************************/
+#logform .login-box {
+    margin: 0 auto;
+}
+/* LOGIN BUTTONS */
+#logform .login-with {
+    display: block;
+    border-radius: 4px;
+    text-align: center;
+    padding: 1em;
+    cursor: pointer;
+    padding: 1em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    position: relative;
+    color: rgba(255,255,255,0.8);
+    transition: all 0.15s ease-out 0;
+}
+#logform .login-with:hover {
+    color: #fff;
+}
+#logform .login-with.github {
+    background-color: #99c;
+}
+#logform .login-with.twitter {
+    background-color: #55acee;
+}
+#logform p.option {
+    text-align: center;
+}
+
+#logform hr.option {
+    position: relative;
+    left: 25%;
+    padding: 0px;
+    height: 0px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    margin: 30px 0px 35px 0px;
+    width: 50%;
+}
+#logform hr.option:before {
+    content: "";
+    height: 1.5em;
+    width: 1.5em;
+    background-color: #fff;
+    /*border: 1px solid #f1f1f1;*/
+    border-radius: 50%;
+    margin-top: -0.75em;
+    margin-left: -0.75em;
+    text-align: center;
+    position: absolute;
+}
+#logform hr.option:after {
+    content: "OR";
+    height: 1em;
+    line-height: 1;
+    margin-top: -0.45em;
+    margin-left: -0.75em;
+    text-align: center;
+    position: absolute;
+    color: #777;
+}
+
+/* LOGIN TEXT INPUT */
+#logform .text-field {
+    margin: 0;
+    width: 100%;
+    padding: .9em .9em .7em;
+    font-size: 88%;
+    font-weight: normal;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-bottom-style: none;
+    text-align: left;
+    box-shadow: none;
+    border-radius: 0;
+    display: block;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+       -moz-box-sizing: border-box; /* Firefox, other Gecko */
+            box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+#logform .text-field:first-of-type {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+#logform .text-field:last-of-type {
+    border-bottom-style: solid;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* SIGNUP BUTTON */
+#logform .login-button {
+    margin: 20px 0px 0 0;
+    width: 100%;
+    font-size: 88%;
+    font-weight: normal;
+    border: none;
+    text-transform: uppercase;
+    line-height: 100%;
+    padding: 1.2em 0 1em;
+    background-color: #7ccfaf;
+    border-radius: 4px;
+    text-align: center;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: all 0.15s ease-out 0;
+}
+#logform .login-button:hover {
+    color: #fff;
+}
+
+#logform .login-text {
+    text-align: center;
+    font-size: 0.75em;
+}
+
+/* */
