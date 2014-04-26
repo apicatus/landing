@@ -333,7 +333,6 @@ passport.use(new GitHubStrategy({
     function(accessToken, refreshToken, profile, done) {
         'use strict';
 
-        console.log("token: ", accessToken);
         // OAuth2
         github.authenticate({
             type: "oauth",
@@ -352,7 +351,7 @@ passport.use(new GitHubStrategy({
                     token: accessToken
                 }
             };
-            console.log("user: ", profile);
+            console.log("user: ", user);
             Account.findOrCreate({ email: user.email }, user, function (error, user) {
                 return done(error, user);
             });
@@ -378,7 +377,7 @@ exports.githubAuthCallback = function(request, response, next) {
             return next(error);
         }
         if (user) {
-            console.log("githubAuthCallback user:", JSON.stringify(request.user, null, 4));
+            //console.log("githubAuthCallback user:", JSON.stringify(request.user, null, 4));
             Account.createUserToken(user.email, function(error, user) {
                 if (error || !user) {
                     response.statusCode = 500;

@@ -1,6 +1,44 @@
 ///////////////////////////////////////////////////////////////////////////////
+// @file         : landing.js                                                //
+// @summary      : Landing page application                                  //
+// @version      : 0.1                                                       //
+// @project      : Apicatus                                                  //
+// @description  : Landing site, user signup and signin                      //
+// @author       : Benjamin Maggi                                            //
+// @email        : benjaminmaggi@gmail.com                                   //
+// @date         : 18 Apr 2014                                               //
+// ------------------------------------------------------------------------- //
+//                                                                           //
+// Copyright 2013~2014 Benjamin Maggi <benjaminmaggi@gmail.com>              //
+//                                                                           //
+//                                                                           //
+// License:                                                                  //
+// Permission is hereby granted, free of charge, to any person obtaining a   //
+// copy of this software and associated documentation files                  //
+// (the "Software"), to deal in the Software without restriction, including  //
+// without limitation the rights to use, copy, modify, merge, publish,       //
+// distribute, sublicense, and/or sell copies of the Software, and to permit //
+// persons to whom the Software is furnished to do so, subject to the        //
+// following conditions:                                                     //
+//                                                                           //
+// The above copyright notice and this permission notice shall be included   //
+// in all copies or substantial portions of the Software.                    //
+//                                                                           //
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS   //
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF                //
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.    //
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY      //
+// CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,      //
+// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE         //
+// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.                    //
+//                                                                           //
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
 // Module dependencies.                                                      //
 ///////////////////////////////////////////////////////////////////////////////
+// RUN IN PROD:
+// export NODE_ENV=production;export SECRET=mySecret;export MONGO_USER=admin; export MONGO_PASS=admin;node landing.js
 var express = require('express'),
     conf = require('./config'),
     passport = require('passport'),
@@ -121,8 +159,8 @@ app.configure('production', function() {
 // Serve the index page
 app.get('/', function(request, response){
     response.render('index', {
-    // PLACEHOLDER
-    pageTitle: 'Apicatus'
+        // PLACEHOLDER
+        pageTitle: 'Apicatus'
     });
 });
 app.get('/xxx', ensureAuthenticated, function(request, response) {
