@@ -339,12 +339,16 @@ passport.use(new GitHubStrategy({
             type: "oauth",
             token: accessToken
         });
-        github.user.getEmails({}, function(err, res) {
-            console.log("email from github:", JSON.stringify(res[0]));
+        github.user.getEmails({}, function(error, emails) {
+            console.log("email from github:", JSON.stringify(emails));
+            // Get Primary Address
+            var primary = emails.filter(function(email){
+                return emails.primary;
+            });
 
             var user = {
                 username: profile.username,
-                email: res[0],
+                email: primary.email,
                 avatar: profile._json.avatar_url,
                 company: profile._json.company,
                 country: profile._json.location,
@@ -384,7 +388,7 @@ exports.githubAuthCallback = function(request, response, next) {
                     response.statusCode = 500;
                     response.json({error: 'Issue generating token'});
                 } else {
-                    response.cookie('token', user.token.token, { maxAge: 900000, httpOnly: false, domain: 'apicat.us'});
+                    response.cookie('token', user.token.token, { maxAge: 900000, httpOnly: false, domain: 'app.apicat.us'});
                     response.redirect('http://app.apicat.us/');
                 }
             });
