@@ -343,8 +343,10 @@ passport.use(new GitHubStrategy({
             console.log("email from github:", JSON.stringify(emails));
             // Get Primary Address
             var primary = emails.filter(function(email){
-                return emails.primary;
-            });
+                return email.primary;
+            })[0];
+
+            console.log("primary: ", primary)
 
             var user = {
                 username: profile.username,
