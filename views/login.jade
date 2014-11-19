@@ -1,0 +1,72 @@
+section(ng-show="login.state == 'continue'")#logform
+    .block
+        .login-box
+            a.login-with.github(href='/auth/github')
+                i.fa.fa-github
+                |&nbsp;Continue with GitHub
+            a.login-with.twitter(href='')
+                i.fa.fa-twitter
+                |&nbsp;Continue with Twitter
+            button(type='submit', tabindex='13', ng-click="login.state = 'signup'").login-button Sign up for Apicatus
+            p.login-text
+                | Already have an account?&nbsp;
+                a(tabindex='14', href='', ng-click="login.state = 'login'").switchView Sign in
+                |&nbsp;.
+            p.login-text.smaller
+                |&nbsp;By clicking "Sign up for Apicatus", you agree to our&nbsp;
+                a(tabindex='15', href='http://apicat.us/tos') terms of service
+                |&nbsp;and&nbsp;
+                a(tabindex='15', href='https://www.iubenda.com/privacy-policy/678926') privacy policy
+                |&nbsp;.
+section(ng-show="login.state == 'signup'")#logform
+    .block
+        .login-box
+            a.login-with.github(href='/auth/github')
+                i.fa.fa-github
+                |&nbsp;Continue with GitHub
+            a.login-with.twitter(href='')
+                i.fa.fa-twitter
+                |&nbsp;Continue with Twitter
+            hr.option
+            .input-fields
+                input.text-field(placeholder='Name', type='text', name='name', value='', autofocus='autofocus', tabindex='10')
+                input.text-field(placeholder='Email', type='email', name='email', value='', tabindex='11', required='')
+                input.text-field(placeholder='Password', type='password', name='pass', value='', tabindex='12', required='')
+                button.login-button(type='submit', tabindex='13') Sign up for Apicatus
+            p.login-text
+                |&nbsp;Already have an account?&nbsp;
+                a(tabindex='14', href='', ng-click="login.state = 'login'").switchView Sign in
+                |&nbsp;.
+            p.login-text.smaller
+                |&nbsp;By clicking "Sign up for Apicatus", you agree to our&nbsp;
+                a(tabindex='15', href='http://apicat.us/tos') terms of service
+                |&nbsp;and&nbsp;
+                a(tabindex='15', href='https://www.iubenda.com/privacy-policy/678926') privacy policy
+                |&nbsp;.
+section(ng-show="login.state == 'login'")#logform
+    .block
+        .login-box
+            a.login-with.github(href='/auth/github')
+                i.fa.fa-github
+                |&nbsp;Sign in with GitHub
+            a.login-with.twitter(href='')
+                i.fa.fa-twitter
+                |&nbsp;Sign in with Twitter
+            hr.option
+            .input-fields
+                input(placeholder='Email', type='email', name='email', value='', tabindex='11', required='').text-field
+                input(placeholder='Password', type='password', name='pass', value='', tabindex='12', required='').text-field
+            p.login-text
+                a(tabindex='5', href='', ng-click="login.state = 'recover'").forgottenPass Forgotten Password?
+            button#r_submit.login-button(type='submit', tabindex='13') Sign in
+            p.login-text
+                |&nbsp;Need an account?&nbsp;
+                a(tabindex='7', href='', ng-click="login.state = 'signup'").switchView Sign up now
+                |&nbsp;.
+section(ng-show="login.state == 'recover'")#logform
+    .block
+        .login-box
+            h1.login-heading Password Recovery
+            .input-fields
+                input(placeholder='Email', type='email', name='email', value='', tabindex='11', required='').text-field
+            button(type='submit', tabindex='13').login-button Send email with instructions
