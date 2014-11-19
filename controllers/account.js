@@ -327,7 +327,8 @@ exports.resetToken = function(request, response, next) {
 passport.use(new GitHubStrategy({
         clientID: conf.oAuthServices.github.clientId,
         clientSecret: conf.oAuthServices.github.clientSecret,
-        callbackURL: "http://" + conf.baseUrl + ":" + conf.listenPort + "/auth/github/callback",
+        //callbackURL: "http://" + conf.baseUrl + ":" + conf.listenPort + "/auth/github/callback",
+        callbackURL: "http://apicat.us/auth/github/callback",
         scope: ['user']
     },
     function(accessToken, refreshToken, profile, done) {
@@ -383,8 +384,8 @@ exports.githubAuthCallback = function(request, response, next) {
                     response.statusCode = 500;
                     response.json({error: 'Issue generating token'});
                 } else {
-                    response.cookie('token', user.token.token, { maxAge: 900000, httpOnly: false });
-                    response.redirect('http://miapi.com:8080/');
+                    response.cookie('token', user.token.token, { maxAge: 900000, httpOnly: false, domain: 'apicat.us'});
+                    response.redirect('http://app.apicat.us/');
                 }
             });
         } else {
