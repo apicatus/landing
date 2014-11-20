@@ -8,7 +8,7 @@ var environments = {
     // Development options                                                   //
     ///////////////////////////////////////////////////////////////////////////
     "development": {
-        sessionSecret: "secret",
+        sessionSecret: "developmentSecret",
         oAuthServices: {
             github: {
                 clientId: "659885325324038a81b3",
@@ -22,17 +22,15 @@ var environments = {
         environment: process.env.NODE_ENV,
         listenPort: process.env.PORT || 7080,
         ip: process.env.IP || '127.0.0.1',
-        baseUrl: 'miapi.com',
-        allowCrossDomain: false,
+        baseUrl: 'apicat.us',
         autoStart: true,
         ttl: (1000 * 60 * 100), // 10 minutes
         resetTokenExpiresMinutes: 20,
-        staticPath: "/Users/benjius/Desktop/apicatus/frontend/build",
         mongoUrl: {
             hostname: "paulo.mongohq.com",
             port: 10026,
-            username: "admin",
-            password: "admin",
+            username: process.env.MONGO_USER,
+            password: process.env.MONGO_PASS,
             name: "",
             db: "apicatus"
         }
@@ -42,7 +40,7 @@ var environments = {
     // Warning: DB must be empty, do not use dev or prod databases           //
     ///////////////////////////////////////////////////////////////////////////
     "test": {
-        sessionSecret: "secret",
+        sessionSecret: "testSecret",
         oAuthServices: {
             github: {
                 clientId: "1b147fb22f603248b539",
@@ -56,17 +54,15 @@ var environments = {
         environment: process.env.NODE_ENV,
         listenPort: process.env.PORT || 7080,
         ip: process.env.IP || os.hostname(),
-        baseUrl: 'miapi.com',
-        allowCrossDomain: false,
+        baseUrl: 'apicat.us',
         autoStart: false,
         ttl: (1000 * 60 * 100),
         resetTokenExpiresMinutes: 20,
-        staticPath: "/frontend/build",
         mongoUrl: {
             hostname: "paulo.mongohq.com",
             port: 10026,
-            username: "admin",
-            password: "admin",
+            username: process.env.MONGO_USER,
+            password: process.env.MONGO_PASS,
             name: "",
             db: "apicatus"
         }
@@ -90,11 +86,9 @@ var environments = {
         listenPort: process.env.PORT || 7080,
         ip: process.env.IP || '127.0.0.1',
         baseUrl: 'apicat.us',
-        allowCrossDomain: false,
         autoStart: true,
         ttl: 3600000,
         resetTokenExpiresMinutes: 20,
-        staticPath: "./frontend/bin",
         mongoUrl: {
             hostname: "paulo.mongohq.com",
             port: 10026,
