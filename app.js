@@ -105,7 +105,7 @@ var init = function() {
 ////////////////////////////////////////////////////////////////////////////////
 mongoose.connection.on('open', function() {
     'use strict';
-    console.log('mongodb connected');
+    console.log('mongodb connected to: ', generateMongoUrl(conf.mongoUrl));
 });
 mongoose.connection.on('error', function(error) {
     'use strict';

@@ -7,7 +7,7 @@ var environments = {
     ///////////////////////////////////////////////////////////////////////////
     // Development options                                                   //
     ///////////////////////////////////////////////////////////////////////////
-    "development": {
+    'development': {
         sessionSecret: "developmentSecret",
         oAuthServices: {
             github: {
@@ -39,7 +39,7 @@ var environments = {
     // Testing options                                                       //
     // Warning: DB must be empty, do not use dev or prod databases           //
     ///////////////////////////////////////////////////////////////////////////
-    "test": {
+    'test': {
         sessionSecret: "testSecret",
         oAuthServices: {
             github: {
@@ -70,7 +70,7 @@ var environments = {
     ///////////////////////////////////////////////////////////////////////////
     // Production options OpenShift                                          //
     ///////////////////////////////////////////////////////////////////////////
-    production: {
+    'production': {
         sessionSecret: process.env.SECRET,
         oAuthServices: {
             github: {
