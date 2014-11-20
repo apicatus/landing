@@ -173,7 +173,7 @@ app.use(passport.session());
 /// Jade to HTML on fly middleware
 app.use(function (req, res, next) {
     if ( /\.html$/i.test(req.url) ) {
-        var jadeFile = path.join(process.cwd(), 'views', req.url.replace(/\.html$/i, '.jade'));
+        var jadeFile = path.join(__dirname, 'views', req.url.replace(/\.html$/i, '.jade'));
         console.log("jade: ", jadeFile)
 
         if (fs.existsSync(jadeFile)) {
