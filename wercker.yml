@@ -15,3 +15,31 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+deploy:
+  steps:
+    - add-to-known_hosts:
+        hostname: apicat.us
+    - mktemp:
+        envvar: PRIVATEKEY_PATH
+    - create-file:
+        name: write key
+        filename: $PRIVATEKEY_PATH
+        content: $WERCKER_PRIVATE
+        overwrite: true
+    - script:
+        name: transfer application
+        code: |
+          pwd
+          ls -la
+          tar -cvf landing.tar .
+          gzip landing.tar
+          scp -i $PRIVATEKEY_PATH landing.tar.gz root@apicat.us:/var/local/www
+    - script:
+        name: npm install
+        code: ssh -i $PRIVATEKEY_PATH -l root apicat.us "cd /var/local/www/ && npm install --production"
+    - script:
+        name: start application
+        code: |
+          ssh -i $PRIVATEKEY_PATH -l root apicat.us "ls -l /var/www"
+      # ssh -i $PRIVATEKEY_PATH -l root mies.io "if [[ \"\$(status node-app)\" = *start/running* ]]; then stop node-app -n ; fi"
+      # ssh -i $PRIVATEKEY_PATH -l root mies.io start node-app

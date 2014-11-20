@@ -24,9 +24,13 @@
     "express-session": "^1.9.1",
     "errorhandler": "^1.2.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "supertest": "^0.15.0"
+  },
   "scripts": {
-    "test": "make test-cov-remote"
+    "test": "mocha",
+    "start": "app.js"
   },
   "engines": {
     "node": ">= 0.6"
