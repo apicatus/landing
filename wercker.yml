@@ -33,13 +33,13 @@ deploy:
           ls -la
           tar -cvf landing.tar .
           gzip landing.tar
-          scp -i $PRIVATEKEY_PATH landing.tar.gz root@apicat.us:/var/local/www
+          scp -i $PRIVATEKEY_PATH landing.tar.gz deploy@apicat.us:/var/deploy/landing
     - script:
         name: npm install
-        code: ssh -i $PRIVATEKEY_PATH -l root apicat.us "cd /var/local/www/ && npm install --production"
+        code: ssh -i $PRIVATEKEY_PATH -l deploy apicat.us "cd /var/deploy/landing/ && npm install --production"
     - script:
         name: start application
         code: |
-          ssh -i $PRIVATEKEY_PATH -l root apicat.us "ls -l /var/www"
-      # ssh -i $PRIVATEKEY_PATH -l root mies.io "if [[ \"\$(status node-app)\" = *start/running* ]]; then stop node-app -n ; fi"
-      # ssh -i $PRIVATEKEY_PATH -l root mies.io start node-app
+          ssh -i $PRIVATEKEY_PATH -l deploy apicat.us "ls -l /var/deploy/landing"
+      # ssh -i $PRIVATEKEY_PATH -l deploy mies.io "if [[ \"\$(status node-app)\" = *start/running* ]]; then stop node-app -n ; fi"
+      # ssh -i $PRIVATEKEY_PATH -l deploy mies.io start node-app
