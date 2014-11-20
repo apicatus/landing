@@ -59,11 +59,12 @@ section#blog
 section#streamline(data-bottom-top='background-position: 0px -200px;', data-0-top-bottom='background-position: 0px 50px')
     .block
         h1 STREAMLINE
-section(ui-view="login")#login
+section#login
     .block
         .title
-            h1 REGISTER
+            h1 LOGIN
             h2 LET'S HAVE SOME FUN
+            div(ui-view="login", data-bottom-top='left:-200px;opacity: 0', data-bottom='left:0px;opacity: 1')
 section#howto
     .block
         .title
