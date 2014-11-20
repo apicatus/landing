@@ -55,6 +55,8 @@ $(function () {
         cur = cur[cur.length - 1];
         var id = cur && cur.length ? cur[0].id : "";
 
+        console.log("lastId: ", lastId, " id: ", id);
+
         if (lastId !== id) {
             lastId = id;
             // Set/remove active class
