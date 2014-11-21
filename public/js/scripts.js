@@ -3,10 +3,8 @@ $(function () {
     $(window).scroll(function () {
         if ($(this).scrollTop() > 456) {
             $('#menu').addClass("f-nav");
-            $('#statement').addClass("margin-top");
         } else {
             $('#menu').removeClass("f-nav");
-            $('#statement').removeClass("margin-top");
         }
     });
 
@@ -73,59 +71,3 @@ $(function () {
     });
 
 });
-
-function toggleTalk(ev) {
-    ev.preventDefault();
-    var $speaker = $(ev.target).closest('.speaker_entity');
-    var exp = "expanded_talk";
-    var otherexp = "expanded_bio";
-
-    var isExpanded = $speaker.hasClass(exp);
-
-    if (isExpanded) {
-        // hiding
-        $speaker.removeClass(exp);
-
-    } else {
-        // showing
-        $speaker.addClass(exp);
-
-    }
-
-    // hide other section if open
-    if ($speaker.hasClass(otherexp)) {
-        $speaker.removeClass(otherexp);
-
-    };
-    return false;
-}
-
-function toggleBio(ev) {
-    ev.preventDefault();
-    var $speaker = $(ev.target).closest('.speaker_entity');
-    var exp = "expanded_bio";
-    var otherexp = "expanded_talk";
-
-    var isExpanded = $speaker.hasClass(exp);
-
-    if (isExpanded) {
-        // hiding
-        $speaker.removeClass(exp);
-
-    } else {
-        // showing
-        $speaker.addClass(exp);
-
-    }
-
-    // hide other section if open
-    if ($speaker.hasClass(otherexp)) {
-        $speaker.removeClass(otherexp);
-
-    };
-    return false;
-}
-
-
-$(document).on("click", ".expand_talk", toggleTalk);
-$(document).on("click", ".expand_bio", toggleBio);

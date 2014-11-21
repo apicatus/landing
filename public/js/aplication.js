@@ -9,17 +9,9 @@ var Landing = angular.module('Landing', [
     'ngAnimate',
     'restangular'
 ]);
-Landing.run(['$rootScope', '$state', 'Restangular', function($rootScope, $state, Restangular) {
-
-    $rootScope.user = {
-        name: 'Eltiro',
-    }
-    Restangular.oneUrl('user', 'http://api.apicat.us:8070/user/signin').customPOST({username: 'admin', password: 'admin'}).then(function(response){
-        console.log(response)
-    });
-
-}]);
-Landing.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', function($stateProvider, $urlRouterProvider, RestangularProvider) {
+Landing.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'RestangularProvider', function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
+    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('!');
     RestangularProvider.setRestangularFields({
         id: '_id'
     });
@@ -41,6 +33,16 @@ Landing.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', f
                 }
             }
         });
+
+}]);
+Landing.run(['$rootScope', '$state', 'Restangular', function($rootScope, $state, Restangular) {
+
+    $rootScope.user = {
+        name: 'Eltiro',
+    }
+    Restangular.oneUrl('user', 'http://api.apicat.us:8070/user/signin').customPOST({username: 'admin', password: 'admin'}).then(function(response){
+        console.log(response)
+    });
 
 }]);
 Landing.controller('HomeCtrl', ['$scope', function($scope){

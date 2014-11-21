@@ -2,6 +2,7 @@ doctype html
 html(ng-app="Landing", lang="en", prefix='og: http://ogp.me/ns#')
     head
         title Apicatus
+        base(href="/")
         meta(charset='utf-8')
         meta(name='description', content='Apicatus is a tool designed to mock, test, analyze and monitor APIs')
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
@@ -44,63 +45,7 @@ html(ng-app="Landing", lang="en", prefix='og: http://ogp.me/ns#')
         script(type='text/javascript', src='//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js')
         script(type='text/javascript', src='js/modernizr.js')
         script(type='text/javascript', src='js/scripts.js')
-        script.
-            var Landing = angular.module('Landing', [
-                'ui.bootstrap',
-                'ui.bootstrap.tpls',
-                'ui.router',
-                'ui.utils',
-                'ngAnimate',
-                'restangular'
-            ]);
-            Landing.run(['$rootScope', '$state', 'Restangular', function($rootScope, $state, Restangular) {
-
-                $rootScope.user = {
-                    name: 'Eltiro',
-                }
-                Restangular.oneUrl('user', 'http://api.apicat.us:8070/user/signin').customPOST({username: 'admin', password: 'admin'}).then(function(response){
-                    console.log(response)
-                });
-
-            }]);
-            Landing.config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', function($stateProvider, $urlRouterProvider, RestangularProvider) {
-                RestangularProvider.setRestangularFields({
-                    id: '_id'
-                });
-                RestangularProvider.setDefaultHeaders({
-                    'Content-Type': 'application/json'
-                });
-                $urlRouterProvider.otherwise('/');
-                $stateProvider
-                    .state('home', {
-                        url: '/',
-                        views: {
-                            'main': {
-                                templateUrl: 'home.html',
-                                controller: 'HomeCtrl as home'
-                            },
-                            'login': {
-                                templateUrl: 'login.html',
-                                controller: 'LoginCtrl as login'
-                            }
-                        }
-                    });
-
-            }]);
-            Landing.controller('HomeCtrl', ['$scope', function($scope){
-            }]);
-            Landing.controller('LoginCtrl', ['$scope', function($scope){
-                console.log('LoginCtrl');
-
-                this.state = 'continue';
-                this.recover = function() {
-                    this.state = 'recover';
-                };
-
-            }]);
-            Landing.controller('MainCtrl', ['$scope', function($scope) {
-                console.log("started")
-            }]);
+        script(type='text/javascript', src='js/aplication.js')
         script.
             Modernizr.load([{
                 test: Modernizr.mq('only screen and (min-width: 800px)'),
