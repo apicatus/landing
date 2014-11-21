@@ -107,36 +107,6 @@ exports.signIn = function(request, response, next) {
 };
 
 ///////////////////////////////////////////////////////////////////////////////
-// Route to Account signout                                                  //
-//                                                                           //
-// @param {Object} request                                                   //
-// @param {Object} response                                                  //
-// @param {Object} next                                                      //
-// @return {Object} message ok                                               //
-//                                                                           //
-// @api public                                                               //
-//                                                                           //
-// @url GET /account/signout                                                 //
-///////////////////////////////////////////////////////////////////////////////
-exports.signOut = function(request, response, next) {
-    'use strict';
-    //request.logout();
-    if (request.user.email) {
-        Account.deleteUserToken(request.user.email, function(error, user) {
-            if (error || !user) {
-                response.statusCode = 500;
-                return next(error);
-            } else {
-                response.statusCode = 200;
-                response.json({"title": "sucess", "message": "signout", "status": "ok"});
-            }
-        });
-    } else {
-        response.statusCode = 500;
-        response.json({error: 'Error decoding api token.'});
-    }
-};
-///////////////////////////////////////////////////////////////////////////////
 // Route to get currently authenticated Account                              //
 //                                                                           //
 // @param {Object} request                                                   //
@@ -218,75 +188,6 @@ exports.create = function(request, response, next) {
     });
 };
 
-///////////////////////////////////////////////////////////////////////////////
-// Route to update an Account                                                //
-//                                                                           //
-// @param {Object} request                                                   //
-// @param {Object} response                                                  //
-// @param {Object} next                                                      //
-// @return {Object} JSON updated account                                     //
-//                                                                           //
-// @api public                                                               //
-//                                                                           //
-// @url POST /account/update/:id                                             //
-///////////////////////////////////////////////////////////////////////////////
-exports.update = function(request, response, next) {
-    'use strict';
-
-    if (request.user.email) {
-        Account.findOneAndUpdate({email: request.user.email}, request.body)
-        .exec(function(error, user) {
-            if (error) {
-                response.statusCode = 500;
-                return next();
-            }
-            if(!user) {
-                response.statusCode = 404;
-                return response.json({"title": "error", "message": "Not Found", "status": "fail"});
-            } else {
-
-                response.statusCode = 200;
-                return response.json(user);
-            }
-        });
-    } else {
-        response.statusCode = 500;
-        response.json({error: 'Error decoding api token.'});
-    }
-};
-
-///////////////////////////////////////////////////////////////////////////////
-// Route to remove an Account                                                //
-//                                                                           //
-// @param {Object} request                                                   //
-// @param {Object} response                                                  //
-// @param {Object} next                                                      //
-// @return {Object} JSON updated account                                     //
-//                                                                           //
-// @api public                                                               //
-//                                                                           //
-// @url DELETE /users                                                        //
-///////////////////////////////////////////////////////////////////////////////
-exports.delete = function(request, response, next) {
-    'use strict';
-
-    if (request.user.email) {
-        Account.findOneAndRemove({email: request.user.email})
-        .exec(function(error) {
-            if (error) {
-                response.statusCode = 500;
-                return next();
-            } else {
-                // The request was processed successfully, but no response body is needed.
-                response.statusCode = 204;
-                return response.json({"title": "sucess", "message": "removed", "status": "ok"});
-            }
-        });
-    } else {
-        response.statusCode = 500;
-        response.json({error: 'Error decoding api token.'});
-    }
-};
 
 exports.resetToken = function(request, response, next) {
     'use strict';

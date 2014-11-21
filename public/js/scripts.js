@@ -1,10 +1,24 @@
 $(function () {
     // Fixed nav after certain point
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 456) {
+        var scale = (Math.abs(scroll) / 1000) < 3 ? (Math.abs(scroll) / 1000) : 1;
+        var scroll = $(this).scrollTop();
+
+        if (scroll > 456) {
             $('#menu').addClass("f-nav");
         } else {
             $('#menu').removeClass("f-nav");
+        }
+        if (scroll < 0) {
+            $('.icon32').css({
+                '-webkit-transform': 'scale(' + (1 + scale) + ')',
+                'transform': 'scale(' + (1 + scale) + ')'
+            })
+        } else {
+            $('.icon32').css({
+                '-webkit-transform': 'scale(1)',
+                'transform': 'scale(1)'
+            })
         }
     });
 
@@ -31,7 +45,6 @@ $(function () {
         // Anchors corresponding to menu items
         scrollItems = menuItems.map(function () {
             var item = $($(this).attr("href"));
-            console.log("item: ", $(this).attr("href"))
             if (item.length) {
                 return item;
             }

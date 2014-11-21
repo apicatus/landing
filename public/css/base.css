@@ -101,6 +101,10 @@ textarea {
   padding: 6em 2em;
 }
 
+.tos {
+  text-align: left;
+}
+
 .button {
   border: 2px solid;
   padding: .8em 0;
@@ -117,6 +121,8 @@ textarea {
 .icon32 {
     max-width: 32px;
     max-height: 32px;
+    -webkit-transition: all 0.2s;
+            transition: all 0.2s;
 }
 .paragraph-logo {
     max-width: 90px;
@@ -172,10 +178,6 @@ textarea {
 
 #header .actions .button {
   width: 33%;
-}
-
-#header .actions a:first-of-type {
-  margin-right: 1em;
 }
 
 #header h1 {

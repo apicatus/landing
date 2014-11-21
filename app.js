@@ -152,7 +152,7 @@ function ensureAuthenticated(request, response, next) {
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.set('title', 'Runner');
+app.set('title', 'Landing');
 // Body Parser
 app.use(bodyParser.urlencoded({
   extended: true
@@ -208,21 +208,14 @@ switch(process.env.NODE_ENV) {
 ///////////////////////////////////////////////////////////////////////////////
 // Application rutes                                                         //
 ///////////////////////////////////////////////////////////////////////////////
-// Serve the index page
-app.get('/', function(request, response){
-    response.render('index');
-});
-
-///////////////////////////////////////////////////////////////////////////////
-//   Use passport.authenticate() as route middleware to authenticate the
-//   request.  The first step in GitHub authentication will involve redirecting
-//   the user to github.com.  After authorization, GitHubwill redirect the user
-//   back to this application at /auth/github/callback
-///////////////////////////////////////////////////////////////////////////////
 
 app.get('/auth/github', Account.githubAuth);
 app.get('/auth/github/callback', Account.githubAuthCallback);
 
+// Serve the index page
+app.get('/*', function(request, response){
+    response.render('index');
+});
 ///////////////////////////////////////////////////////////////////////////////
 // Init the APP
 ///////////////////////////////////////////////////////////////////////////////

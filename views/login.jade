@@ -1,7 +1,7 @@
 section(ng-show="login.state == 'continue'")#logform
     .block
         .login-box
-            a.login-with.github(href='/auth/github')
+            a.login-with.github(href="", ng-click="login.goAuth('github')")
                 i.fa.fa-github
                 |&nbsp;Continue with GitHub
             a.login-with.twitter(href='')
@@ -29,10 +29,11 @@ section(ng-show="login.state == 'signup'")#logform
                 |&nbsp;Continue with Twitter
             hr.option
             .input-fields
-                input.text-field(placeholder='Name', type='text', name='name', value='', autofocus='autofocus', tabindex='10')
-                input.text-field(placeholder='Email', type='email', name='email', value='', tabindex='11', required='')
-                input.text-field(placeholder='Password', type='password', name='pass', value='', tabindex='12', required='')
-                button.login-button(type='submit', tabindex='13') Sign up for Apicatus
+                form(novalidate)
+                    input.text-field(placeholder='Name', type='text', name='name', tabindex='10', autofocus='autofocus')
+                    input.text-field(placeholder='Email', type='email', name='email', tabindex='11', required='')
+                    input.text-field(placeholder='Password', type='password', name='pass', tabindex='12', required='')
+                    button.login-button(type='submit', tabindex='13') Sign up for Apicatus
             p.login-text
                 |&nbsp;Already have an account?&nbsp;
                 a(tabindex='14', href='', ng-click="login.state = 'login'").switchView Sign in
@@ -54,8 +55,9 @@ section(ng-show="login.state == 'login'")#logform
                 |&nbsp;Sign in with Twitter
             hr.option
             .input-fields
-                input(placeholder='Email', type='email', name='email', value='', tabindex='11', required='').text-field
-                input(placeholder='Password', type='password', name='pass', value='', tabindex='12', required='').text-field
+                form(novalidate)
+                    input(placeholder='Email', type='email', name='email', value='', tabindex='11', required='').text-field
+                    input(placeholder='Password', type='password', name='pass', value='', tabindex='12', required='').text-field
             p.login-text
                 a(tabindex='5', href='', ng-click="login.state = 'recover'").forgottenPass Forgotten Password?
             button#r_submit.login-button(type='submit', tabindex='13') Sign in

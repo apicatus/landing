@@ -32,6 +32,15 @@ Landing.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'Re
                     controller: 'LoginCtrl as login'
                 }
             }
+        })
+        .state('tos', {
+            url: '/tos',
+            views: {
+                'main': {
+                    templateUrl: 'tos.html',
+                    controller: 'HomeCtrl as home'
+                }
+            }
         });
 
 }]);
@@ -47,12 +56,15 @@ Landing.run(['$rootScope', '$state', 'Restangular', function($rootScope, $state,
 }]);
 Landing.controller('HomeCtrl', ['$scope', function($scope){
 }]);
-Landing.controller('LoginCtrl', ['$scope', function($scope){
+Landing.controller('LoginCtrl', ['$scope', '$window', function($scope, $window){
     console.log('LoginCtrl');
 
     this.state = 'continue';
     this.recover = function() {
         this.state = 'recover';
+    };
+    this.goAuth = function(provider) {
+        $window.location.assign('/auth/' + provider);
     };
 
 }]);
