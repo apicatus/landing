@@ -55,6 +55,7 @@ Landing.run(['$rootScope', '$state', 'Restangular', function($rootScope, $state,
 
 }]);
 Landing.controller('HomeCtrl', ['$scope', function($scope){
+
 }]);
 Landing.controller('LoginCtrl', ['$scope', '$window', function($scope, $window){
     console.log('LoginCtrl');
@@ -63,11 +64,9 @@ Landing.controller('LoginCtrl', ['$scope', '$window', function($scope, $window){
     this.recover = function() {
         this.state = 'recover';
     };
+}]);
+Landing.controller('MainCtrl', ['$scope', '$window', function($scope, $window){
     this.goAuth = function(provider) {
         $window.location.assign('/auth/' + provider);
     };
-
-}]);
-Landing.controller('MainCtrl', ['$scope', function($scope) {
-    console.log("started")
 }]);
