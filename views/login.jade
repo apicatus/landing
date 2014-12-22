@@ -1,16 +1,16 @@
-section(ng-show="login.state == 'continue'")#logform
-    .block
+section(ng-show="home.login.state == 'continue'")#logform
+    .blocky
         .login-box
             a.login-with.github(href="", ng-click="main.goAuth('github')")
                 i.fa.fa-github
                 |&nbsp;Continue with GitHub
-            a.login-with.twitter(href='')
+            //a.login-with.twitter(href='')
                 i.fa.fa-twitter
                 |&nbsp;Continue with Twitter
-            button(type='submit', tabindex='13', ng-click="login.state = 'signup'").login-button Sign up for Apicatus
+            button(type='submit', tabindex='13', ng-click="home.login.state = 'signup'").login-button Sign up for Apicatus
             p.login-text
                 | Already have an account?&nbsp;
-                a(tabindex='14', href='', ng-click="login.state = 'login'").switchView Sign in
+                a(tabindex='14', href='', ng-click="home.login.state = 'login'").switchView Sign in
                 |&nbsp;.
             p.login-text.smaller
                 |&nbsp;By clicking "Sign up for Apicatus", you agree to our&nbsp;
@@ -18,13 +18,13 @@ section(ng-show="login.state == 'continue'")#logform
                 |&nbsp;and&nbsp;
                 a(tabindex='15', href='https://www.iubenda.com/privacy-policy/678926') privacy policy
                 |&nbsp;.
-section(ng-show="login.state == 'signup'")#logform
-    .block
+section(ng-show="home.login.state == 'signup'")#logform
+    .blocky
         .login-box
             a.login-with.github(href='/auth/github')
                 i.fa.fa-github
                 |&nbsp;Continue with GitHub
-            a.login-with.twitter(href='')
+            //a.login-with.twitter(href='')
                 i.fa.fa-twitter
                 |&nbsp;Continue with Twitter
             hr.option
@@ -36,7 +36,7 @@ section(ng-show="login.state == 'signup'")#logform
                     button.login-button(type='submit', tabindex='13') Sign up for Apicatus
             p.login-text
                 |&nbsp;Already have an account?&nbsp;
-                a(tabindex='14', href='', ng-click="login.state = 'login'").switchView Sign in
+                a(tabindex='14', href='', ng-click="home.login.state = 'login'").switchView Sign in
                 |&nbsp;.
             p.login-text.smaller
                 |&nbsp;By clicking "Sign up for Apicatus", you agree to our&nbsp;
@@ -44,13 +44,13 @@ section(ng-show="login.state == 'signup'")#logform
                 |&nbsp;and&nbsp;
                 a(tabindex='15', href='https://www.iubenda.com/privacy-policy/678926') privacy policy
                 |&nbsp;.
-section(ng-show="login.state == 'login'")#logform
-    .block
+section(ng-show="home.login.state == 'login'")#logform
+    .blocky
         .login-box
             a.login-with.github(href='/auth/github')
                 i.fa.fa-github
                 |&nbsp;Sign in with GitHub
-            a.login-with.twitter(href='')
+            //a.login-with.twitter(href='')
                 i.fa.fa-twitter
                 |&nbsp;Sign in with Twitter
             hr.option
@@ -59,14 +59,14 @@ section(ng-show="login.state == 'login'")#logform
                     input(placeholder='Email', type='email', name='email', value='', tabindex='11', required='').text-field
                     input(placeholder='Password', type='password', name='pass', value='', tabindex='12', required='').text-field
             p.login-text
-                a(tabindex='5', href='', ng-click="login.state = 'recover'").forgottenPass Forgotten Password?
+                a(tabindex='5', href='', ng-click="home.login.state = 'recover'").forgottenPass Forgotten Password?
             button#r_submit.login-button(type='submit', tabindex='13') Sign in
             p.login-text
                 |&nbsp;Need an account?&nbsp;
-                a(tabindex='7', href='', ng-click="login.state = 'signup'").switchView Sign up now
+                a(tabindex='7', href='', ng-click="home.login.state = 'signup'").switchView Sign up now
                 |&nbsp;.
-section(ng-show="login.state == 'recover'")#logform
-    .block
+section(ng-show="home.login.state == 'recover'")#logform
+    .blocky
         .login-box
             h1.login-heading Password Recovery
             .input-fields

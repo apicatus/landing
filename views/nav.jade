@@ -1,21 +1,20 @@
-nav#menu(role='custom-dropdown')
-    div.block
-        input#button(type='checkbox')
-        label(for='button', onclick='')
-            i.menu.fa.fa-bars
-        ul
-            li.menu-logo
-                a.nav-btn(href='#header')
-                    img.logo.icon32(src='images/logo.png')
-            li
-                a.nav-btn(href='#about') ABOUT
-            li
-                a.nav-btn(href='#features') FEATURES
-            li
-                a.nav-btn(href='#howto') HOWTO
-            li
-                a.nav-btn(href='#blog') BLOG
-            li
-                a.nav-btn(href='#login')
-                    i.fa.fa-fw.fa-sign-in
-                    |&nbsp;LOGIN
+nav.menu(role="nav")
+    input#button(type='checkbox')
+    label(for='button')
+        i.menu.fa.fa-bars
+    ul
+        li.menu-logo
+            a.nav-btn(href='#header', du-smooth-scroll, offset="0", style="padding:0px;")
+                img.logo.icon32(src='images/logo.png')
+        li
+            a.nav-btn(href='#about', du-smooth-scroll, du-scrollspy, offset="30") ABOUT
+        li
+            a.nav-btn(href='#features', du-smooth-scroll, du-scrollspy, offset="30") FEATURES
+        li
+            a.nav-btn(href='#sponsor', du-smooth-scroll, du-scrollspy, offset="30") SPONSOR
+        li
+            a.nav-btn(href='#team', du-smooth-scroll, du-scrollspy, offset="30") TEAM
+        li
+            a.nav-btn(href='#login', du-smooth-scroll, du-scrollspy, offset="30")
+                i.fa.fa-fw.fa-sign-in
+                |&nbsp;LOGIN
